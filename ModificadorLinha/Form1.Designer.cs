@@ -44,6 +44,13 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.chkGerarOld = new System.Windows.Forms.CheckBox();
             this.optDiretorios = new System.Windows.Forms.CheckBox();
+            this.chkEntre = new System.Windows.Forms.CheckBox();
+            this.txtBusca1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBusca2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtRep2 = new System.Windows.Forms.TextBox();
+            this.txtRep1 = new System.Windows.Forms.TextBox();
             this.cnt1 = new ModificadorLinha.Cnt();
             this.SuspendLayout();
             // 
@@ -201,6 +208,68 @@
             this.optDiretorios.Text = "Incluir alteracao em nome de diretorios";
             this.optDiretorios.UseVisualStyleBackColor = true;
             // 
+            // chkEntre
+            // 
+            this.chkEntre.AutoSize = true;
+            this.chkEntre.Location = new System.Drawing.Point(1655, 700);
+            this.chkEntre.Name = "chkEntre";
+            this.chkEntre.Size = new System.Drawing.Size(293, 36);
+            this.chkEntre.TabIndex = 17;
+            this.chkEntre.Text = "Manter texto Entre:";
+            this.chkEntre.UseVisualStyleBackColor = true;
+            // 
+            // txtBusca1
+            // 
+            this.txtBusca1.Location = new System.Drawing.Point(1744, 756);
+            this.txtBusca1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtBusca1.Name = "txtBusca1";
+            this.txtBusca1.Size = new System.Drawing.Size(158, 38);
+            this.txtBusca1.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1639, 762);
+            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 32);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Atual:";
+            // 
+            // txtBusca2
+            // 
+            this.txtBusca2.Location = new System.Drawing.Point(1943, 756);
+            this.txtBusca2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtBusca2.Name = "txtBusca2";
+            this.txtBusca2.Size = new System.Drawing.Size(158, 38);
+            this.txtBusca2.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1639, 803);
+            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 32);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Novo:";
+            // 
+            // txtRep2
+            // 
+            this.txtRep2.Location = new System.Drawing.Point(1943, 803);
+            this.txtRep2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtRep2.Name = "txtRep2";
+            this.txtRep2.Size = new System.Drawing.Size(158, 38);
+            this.txtRep2.TabIndex = 23;
+            // 
+            // txtRep1
+            // 
+            this.txtRep1.Location = new System.Drawing.Point(1744, 803);
+            this.txtRep1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtRep1.Name = "txtRep1";
+            this.txtRep1.Size = new System.Drawing.Size(158, 38);
+            this.txtRep1.TabIndex = 22;
+            // 
             // cnt1
             // 
             this.cnt1.Location = new System.Drawing.Point(1607, 58);
@@ -212,7 +281,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3026, 848);
+            this.ClientSize = new System.Drawing.Size(3026, 868);
+            this.Controls.Add(this.txtRep2);
+            this.Controls.Add(this.txtRep1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtBusca2);
+            this.Controls.Add(this.txtBusca1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.chkEntre);
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.optDiretorios);
             this.Controls.Add(this.chkGerarOld);
@@ -258,6 +334,13 @@
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.CheckBox chkGerarOld;
         private System.Windows.Forms.CheckBox optDiretorios;
+        private System.Windows.Forms.CheckBox chkEntre;
+        private System.Windows.Forms.TextBox txtBusca1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBusca2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtRep2;
+        private System.Windows.Forms.TextBox txtRep1;
     }
 }
 

@@ -25,10 +25,11 @@ namespace ModificadorLinha
         {
             var dirs = Directory.GetDirectories(txtCaminho.Text, "*" + txtPesquisar.Text + "*", SearchOption.AllDirectories);
 
-            if (dirs.Length > 0) {
+            if (dirs.Length > 0)
+            {
                 Directory.Move(dirs[0], dirs[0].Replace(txtPesquisar.Text, txtNovo.Text));
                 AlterarDiretorios();
-            }             
+            }
         }
         public void Alterar()
         {
@@ -36,7 +37,26 @@ namespace ModificadorLinha
             {
                 var caminhoArquivo = item.ToString();
                 var flInfo = new FileInfo(caminhoArquivo);
-                var texto = File.ReadAllText(caminhoArquivo).Replace(txtPesquisar.Text, txtNovo.Text);
+                var texto = "";
+                if (chkEntre.Checked)
+                {
+                    var lns = File.ReadAllLines(caminhoArquivo);
+                    foreach (var ln in lns)
+                    {
+                        var nln = ln;
+                        while (nln.Contains(txtBusca1.Text) && nln.Contains(txtBusca2.Text)){
+                            var p1 = nln.IndexOf(txtBusca1.Text);
+                            var p2 = nln.IndexOf(txtBusca2.Text, p1 + 1);
+                            var interno = nln.Substring(p1 + txtBusca1.Text.Length, p2 - p1 - txtBusca2.Text.Length -1);
+                            nln = nln.Substring(0, p1) + txtRep1.Text + interno + txtRep2.Text + nln.Substring(p2 + txtBusca2.Text.Length);
+                        }
+                        texto = nln;
+                    }
+                }
+                else
+                {
+                    texto = File.ReadAllText(caminhoArquivo).Replace(txtPesquisar.Text, txtNovo.Text);
+                }
 
                 if (!flInfo.IsReadOnly)
                 {
