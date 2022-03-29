@@ -1,0 +1,10 @@
+C:\desenvolvimento\TextReplacer\TextReplacer\bin\Debug\TextReplacer.exe.config
+C:\desenvolvimento\TextReplacer\TextReplacer\bin\Debug\TextReplacer.exe
+C:\desenvolvimento\TextReplacer\TextReplacer\bin\Debug\TextReplacer.pdb
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.csprojAssemblyReference.cache
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.Form1.resources
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.Properties.Resources.resources
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.csproj.GenerateResource.cache
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.csproj.CoreCompileInputs.cache
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.exe
+C:\desenvolvimento\TextReplacer\TextReplacer\obj\Debug\TextReplacer.pdb

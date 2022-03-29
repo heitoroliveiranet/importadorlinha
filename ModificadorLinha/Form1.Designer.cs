@@ -43,8 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.chkGerarOld = new System.Windows.Forms.CheckBox();
-            this.cnt1 = new ModificadorLinha.Cnt();
             this.optDiretorios = new System.Windows.Forms.CheckBox();
+            this.cnt1 = new ModificadorLinha.Cnt();
             this.SuspendLayout();
             // 
             // btnAplicar
@@ -191,13 +191,6 @@
             this.chkGerarOld.Text = "Backup Arquivo";
             this.chkGerarOld.UseVisualStyleBackColor = true;
             // 
-            // cnt1
-            // 
-            this.cnt1.Location = new System.Drawing.Point(434, -6);
-            this.cnt1.Name = "cnt1";
-            this.cnt1.Size = new System.Drawing.Size(447, 46);
-            this.cnt1.TabIndex = 13;
-            // 
             // optDiretorios
             // 
             this.optDiretorios.AutoSize = true;
@@ -208,11 +201,18 @@
             this.optDiretorios.Text = "Incluir alteracao em nome de diretorios";
             this.optDiretorios.UseVisualStyleBackColor = true;
             // 
+            // cnt1
+            // 
+            this.cnt1.Location = new System.Drawing.Point(1607, 58);
+            this.cnt1.Name = "cnt1";
+            this.cnt1.Size = new System.Drawing.Size(1407, 601);
+            this.cnt1.TabIndex = 13;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1606, 848);
+            this.ClientSize = new System.Drawing.Size(3026, 848);
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.optDiretorios);
             this.Controls.Add(this.chkGerarOld);
