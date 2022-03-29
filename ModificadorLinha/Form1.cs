@@ -31,27 +31,55 @@ namespace ModificadorLinha
                 AlterarDiretorios();
             }
         }
+        public string GetTexto(string texto, string busca1, string busca2, string saida1, string saida2, bool somenteChaves = false)
+        {
+            while (texto.Contains(busca1) && texto.Contains(busca2))
+            {
+                var p1 = texto.IndexOf(busca1) + busca1.Length;
+                var p2 = texto.IndexOf(busca2, p1) - busca2.Length + 1;
+                var interno = texto.Substring(p1, p2 - p1 + 1);
+
+                if (somenteChaves)
+                {
+                    texto = saida1 + interno + saida2;
+                }
+                else
+                {
+                    texto = texto.Substring(0, p1 - busca1.Length) +
+                        saida1 +
+                        interno + saida2 +
+                        texto.Substring(p2 + busca2.Length + 1);
+                }
+            }
+
+            return texto;
+        }
         public void Alterar()
         {
+            var arquivoKeysSaida = "";
             foreach (var item in lst.Items)
             {
                 var caminhoArquivo = item.ToString();
                 var flInfo = new FileInfo(caminhoArquivo);
                 var texto = "";
+
                 if (chkEntre.Checked)
                 {
                     var lns = File.ReadAllLines(caminhoArquivo);
                     foreach (var ln in lns)
                     {
-                        var nln = ln;
-                        while (nln.Contains(txtBusca1.Text) && nln.Contains(txtBusca2.Text)){
-                            var p1 = nln.IndexOf(txtBusca1.Text);
-                            var p2 = nln.IndexOf(txtBusca2.Text, p1 + 1);
-                            var interno = nln.Substring(p1 + txtBusca1.Text.Length, p2 - p1 - txtBusca2.Text.Length -1);
-                            nln = nln.Substring(0, p1) + txtRep1.Text + interno + txtRep2.Text + nln.Substring(p2 + txtBusca2.Text.Length);
-                        }
-                        texto = nln;
+                        var nln = GetTexto(ln, txtBusca1.Text, txtBusca2.Text, txtRep1.Text, txtRep2.Text);
+                        texto += nln + Environment.NewLine;
                     }
+                }
+                else if(chkChaves.Checked){
+                    var lns = File.ReadAllLines(caminhoArquivo);
+                    foreach (var ln in lns)
+                    {
+                        var nlns = GetTexto(ln, txtChave1.Text, txtChave2.Text, txtSaiChave1.Text, txtSaiChave2.Text,true);
+                        arquivoKeysSaida += nlns + Environment.NewLine;                        
+                    }
+                    continue;
                 }
                 else
                 {
@@ -87,10 +115,12 @@ namespace ModificadorLinha
                     {
                         caminhoArquivo = Path.Combine(flInfo.DirectoryName, flInfo.Name.Replace(txtPesquisar.Text, txtNovo.Text));
                     }
-
+                    
                     File.WriteAllText(caminhoArquivo, texto);
                 }
             }
+
+            if(chkChaves.Checked) File.WriteAllText(@"C:\lixo\keys.txt", arquivoKeysSaida);
 
             MessageBox.Show("Finalizado com sucesso!");
         }
@@ -157,6 +187,21 @@ namespace ModificadorLinha
         }
 
         private void optIncluirArquivos_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkEntre_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

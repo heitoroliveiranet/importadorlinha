@@ -51,6 +51,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtRep2 = new System.Windows.Forms.TextBox();
             this.txtRep1 = new System.Windows.Forms.TextBox();
+            this.chkChaves = new System.Windows.Forms.CheckBox();
+            this.txtSaiChave2 = new System.Windows.Forms.TextBox();
+            this.txtSaiChave1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtChave2 = new System.Windows.Forms.TextBox();
+            this.txtChave1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cnt1 = new ModificadorLinha.Cnt();
             this.SuspendLayout();
             // 
@@ -217,6 +224,7 @@
             this.chkEntre.TabIndex = 17;
             this.chkEntre.Text = "Manter texto Entre:";
             this.chkEntre.UseVisualStyleBackColor = true;
+            this.chkEntre.CheckedChanged += new System.EventHandler(this.chkEntre_CheckedChanged);
             // 
             // txtBusca1
             // 
@@ -270,6 +278,71 @@
             this.txtRep1.Size = new System.Drawing.Size(158, 38);
             this.txtRep1.TabIndex = 22;
             // 
+            // chkChaves
+            // 
+            this.chkChaves.AutoSize = true;
+            this.chkChaves.Location = new System.Drawing.Point(1655, 913);
+            this.chkChaves.Name = "chkChaves";
+            this.chkChaves.Size = new System.Drawing.Size(371, 36);
+            this.chkChaves.TabIndex = 24;
+            this.chkChaves.Text = "Gerar Arquivo de Chaves";
+            this.chkChaves.UseVisualStyleBackColor = true;
+            this.chkChaves.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // txtSaiChave2
+            // 
+            this.txtSaiChave2.Location = new System.Drawing.Point(1965, 1018);
+            this.txtSaiChave2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtSaiChave2.Name = "txtSaiChave2";
+            this.txtSaiChave2.Size = new System.Drawing.Size(158, 38);
+            this.txtSaiChave2.TabIndex = 30;
+            // 
+            // txtSaiChave1
+            // 
+            this.txtSaiChave1.Location = new System.Drawing.Point(1766, 1018);
+            this.txtSaiChave1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtSaiChave1.Name = "txtSaiChave1";
+            this.txtSaiChave1.Size = new System.Drawing.Size(158, 38);
+            this.txtSaiChave1.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1601, 1021);
+            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(169, 32);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Saida entre:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // txtChave2
+            // 
+            this.txtChave2.Location = new System.Drawing.Point(1965, 971);
+            this.txtChave2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtChave2.Name = "txtChave2";
+            this.txtChave2.Size = new System.Drawing.Size(158, 38);
+            this.txtChave2.TabIndex = 27;
+            // 
+            // txtChave1
+            // 
+            this.txtChave1.Location = new System.Drawing.Point(1766, 971);
+            this.txtChave1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtChave1.Name = "txtChave1";
+            this.txtChave1.Size = new System.Drawing.Size(158, 38);
+            this.txtChave1.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1661, 977);
+            this.label8.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 32);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Entre";
+            // 
             // cnt1
             // 
             this.cnt1.Location = new System.Drawing.Point(1607, 58);
@@ -281,7 +354,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3026, 868);
+            this.ClientSize = new System.Drawing.Size(3026, 1090);
+            this.Controls.Add(this.txtSaiChave2);
+            this.Controls.Add(this.txtSaiChave1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtChave2);
+            this.Controls.Add(this.txtChave1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.chkChaves);
             this.Controls.Add(this.txtRep2);
             this.Controls.Add(this.txtRep1);
             this.Controls.Add(this.label6);
@@ -341,6 +421,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRep2;
         private System.Windows.Forms.TextBox txtRep1;
+        private System.Windows.Forms.CheckBox chkChaves;
+        private System.Windows.Forms.TextBox txtSaiChave2;
+        private System.Windows.Forms.TextBox txtSaiChave1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtChave2;
+        private System.Windows.Forms.TextBox txtChave1;
+        private System.Windows.Forms.Label label8;
     }
 }
 
