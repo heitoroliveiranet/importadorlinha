@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ModificadorLinha
@@ -36,8 +38,8 @@ namespace ModificadorLinha
             while (texto.Contains(busca1) && texto.Contains(busca2))
             {
                 var p1 = texto.IndexOf(busca1) + busca1.Length;
-                var p2 = texto.IndexOf(busca2, p1) - busca2.Length + 1;
-                var interno = texto.Substring(p1, p2 - p1 + 1);
+                var p2 = texto.IndexOf(busca2, p1 + 1);
+                var interno = texto.Substring(p1, p2 - p1);
 
                 if (somenteChaves)
                 {
@@ -48,11 +50,46 @@ namespace ModificadorLinha
                     texto = texto.Substring(0, p1 - busca1.Length) +
                         saida1 +
                         interno + saida2 +
-                        texto.Substring(p2 + busca2.Length + 1);
+                        texto.Substring(p2 + busca2.Length);
                 }
             }
 
             return texto;
+        }
+        public string[] GetTextos(string texto, string busca1, string busca2, string saida1, string saida2, bool somenteChaves = false)
+        {
+            var lista = new List<string>();
+            var novoTexto = "";
+            var p1 = 0;
+            var p2 = -1;
+            while (texto.Contains(busca1) && texto.Contains(busca2))
+            {
+                p1 = texto.IndexOf(busca1, p2 + 1);
+                if (p1 == -1) break;
+                p1 += busca1.Length;
+                p2 = texto.IndexOf(busca2, p1 + 1);
+                if (p2 == -1) break;
+
+                var interno = texto.Substring(p1, p2 - p1);
+
+                if (somenteChaves)
+                {
+                    novoTexto = saida1 + interno + saida2;
+                }
+                else
+                {
+                    novoTexto = texto.Substring(0, p1 - busca1.Length) +
+                        saida1 +
+                        interno + saida2 +
+                        texto.Substring(p2 + busca2.Length);
+                }
+                if (novoTexto.Trim().Length > 0)
+                    lista.Add(novoTexto);
+
+                novoTexto = "";
+            }
+
+            return lista.ToArray();
         }
         public void Alterar()
         {
@@ -72,12 +109,26 @@ namespace ModificadorLinha
                         texto += nln + Environment.NewLine;
                     }
                 }
-                else if(chkChaves.Checked){
-                    var lns = File.ReadAllLines(caminhoArquivo);
-                    foreach (var ln in lns)
+                else if (chkChaves.Checked)
+                {
+                    var lns = File.ReadAllText(caminhoArquivo);
+                    foreach (var ln in GetTextos(lns, txtChave1.Text, txtChave2.Text, txtSaiChave1.Text, txtSaiChave2.Text, true))
                     {
-                        var nlns = GetTexto(ln, txtChave1.Text, txtChave2.Text, txtSaiChave1.Text, txtSaiChave2.Text,true);
-                        arquivoKeysSaida += nlns + Environment.NewLine;                        
+                        if (txtSplit.Text.Length > 0)
+                        {
+                            var splits = ln.Split(txtSplit.Text.ToCharArray()[0]);
+                            foreach (var sp in splits)
+                            {
+                                var ls = arquivoKeysSaida.Split(Environment.NewLine.ToCharArray()).ToList();
+                                if (chkAgruparChaves.Checked && !ls.Contains(sp) || !chkAgruparChaves.Checked)
+                                    arquivoKeysSaida += sp + Environment.NewLine;
+                            }
+                        }
+                        else
+                        {
+                            if (chkAgruparChaves.Checked && !arquivoKeysSaida.Contains(ln) || !chkAgruparChaves.Checked)
+                                arquivoKeysSaida += ln + Environment.NewLine;
+                        }
                     }
                     continue;
                 }
@@ -115,12 +166,12 @@ namespace ModificadorLinha
                     {
                         caminhoArquivo = Path.Combine(flInfo.DirectoryName, flInfo.Name.Replace(txtPesquisar.Text, txtNovo.Text));
                     }
-                    
+
                     File.WriteAllText(caminhoArquivo, texto);
                 }
             }
 
-            if(chkChaves.Checked) File.WriteAllText(@"C:\lixo\keys.txt", arquivoKeysSaida);
+            if (chkChaves.Checked) File.WriteAllText(@"C:\lixo\keys.txt", arquivoKeysSaida);
 
             MessageBox.Show("Finalizado com sucesso!");
         }
@@ -147,18 +198,24 @@ namespace ModificadorLinha
         }
         public void Localizar(string caminho)
         {
+
             var arqs = Directory.GetFiles(caminho, txtExtensoes.Text);
             foreach (var item in arqs)
             {
-                var txt = File.ReadAllText(item);
-                if (txt.Contains(txtPesquisar.Text) && cnt1.Validar(txt) || optIncluirArquivos.Checked && item.ToUpper().Contains(txtPesquisar.Text.ToUpper()))
-                    lst.Items.Add(item);
+                ArquivoContem(item);
             }
 
             foreach (var dir in Directory.GetDirectories(caminho))
             {
                 Localizar(dir);
             }
+        }
+        public bool ArquivoContem(string caminhoArquivo)
+        {
+            var txt = File.ReadAllText(caminhoArquivo);
+            var c = (txt.Contains(txtPesquisar.Text) && cnt1.Validar(txt) || optIncluirArquivos.Checked && caminhoArquivo.ToUpper().Contains(txtPesquisar.Text.ToUpper()));
+            if (c) lst.Items.Add(caminhoArquivo);
+            return c;
         }
 
         private void lst_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,6 +259,11 @@ namespace ModificadorLinha
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCaminho_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -58,7 +58,10 @@
             this.txtChave2 = new System.Windows.Forms.TextBox();
             this.txtChave1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.chkAgruparChaves = new System.Windows.Forms.CheckBox();
             this.cnt1 = new ModificadorLinha.Cnt();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSplit = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAplicar
@@ -91,6 +94,7 @@
             this.txtCaminho.Size = new System.Drawing.Size(676, 38);
             this.txtCaminho.TabIndex = 3;
             this.txtCaminho.Text = "C:\\";
+            this.txtCaminho.TextChanged += new System.EventHandler(this.txtCaminho_TextChanged);
             // 
             // txtExtensoes
             // 
@@ -343,6 +347,16 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Entre";
             // 
+            // chkAgruparChaves
+            // 
+            this.chkAgruparChaves.AutoSize = true;
+            this.chkAgruparChaves.Location = new System.Drawing.Point(2049, 913);
+            this.chkAgruparChaves.Name = "chkAgruparChaves";
+            this.chkAgruparChaves.Size = new System.Drawing.Size(257, 36);
+            this.chkAgruparChaves.TabIndex = 31;
+            this.chkAgruparChaves.Text = "Agrupar Chaves";
+            this.chkAgruparChaves.UseVisualStyleBackColor = true;
+            // 
             // cnt1
             // 
             this.cnt1.Location = new System.Drawing.Point(1607, 58);
@@ -350,11 +364,32 @@
             this.cnt1.Size = new System.Drawing.Size(1407, 601);
             this.cnt1.TabIndex = 13;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(2209, 974);
+            this.label9.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 32);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Split";
+            // 
+            // txtSplit
+            // 
+            this.txtSplit.Location = new System.Drawing.Point(2297, 971);
+            this.txtSplit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtSplit.Name = "txtSplit";
+            this.txtSplit.Size = new System.Drawing.Size(158, 38);
+            this.txtSplit.TabIndex = 33;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3026, 1090);
+            this.ClientSize = new System.Drawing.Size(3167, 1227);
+            this.Controls.Add(this.txtSplit);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.chkAgruparChaves);
             this.Controls.Add(this.txtSaiChave2);
             this.Controls.Add(this.txtSaiChave1);
             this.Controls.Add(this.label7);
@@ -428,6 +463,9 @@
         private System.Windows.Forms.TextBox txtChave2;
         private System.Windows.Forms.TextBox txtChave1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkAgruparChaves;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSplit;
     }
 }
 

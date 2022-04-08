@@ -1,0 +1,12 @@
+C:\lixo\modlin\ModificadorLinha\bin\Debug\ModificadorLinha.exe.config
+C:\lixo\modlin\ModificadorLinha\bin\Debug\ModificadorLinha.exe
+C:\lixo\modlin\ModificadorLinha\bin\Debug\ModificadorLinha.pdb
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.csprojAssemblyReference.cache
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.Cnt.resources
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.CntLinha.resources
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.frmPrincipal.resources
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.Properties.Resources.resources
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.csproj.GenerateResource.cache
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.csproj.CoreCompileInputs.cache
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.exe
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.pdb
