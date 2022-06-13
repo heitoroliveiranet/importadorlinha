@@ -59,9 +59,10 @@
             this.txtChave1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.chkAgruparChaves = new System.Windows.Forms.CheckBox();
-            this.cnt1 = new ModificadorLinha.Cnt();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSplit = new System.Windows.Forms.TextBox();
+            this.btnGerarChaves = new System.Windows.Forms.Button();
+            this.cnt1 = new ModificadorLinha.Cnt();
             this.SuspendLayout();
             // 
             // btnAplicar
@@ -357,13 +358,6 @@
             this.chkAgruparChaves.Text = "Agrupar Chaves";
             this.chkAgruparChaves.UseVisualStyleBackColor = true;
             // 
-            // cnt1
-            // 
-            this.cnt1.Location = new System.Drawing.Point(1607, 58);
-            this.cnt1.Name = "cnt1";
-            this.cnt1.Size = new System.Drawing.Size(1407, 601);
-            this.cnt1.TabIndex = 13;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -382,11 +376,30 @@
             this.txtSplit.Size = new System.Drawing.Size(158, 38);
             this.txtSplit.TabIndex = 33;
             // 
+            // btnGerarChaves
+            // 
+            this.btnGerarChaves.Location = new System.Drawing.Point(1679, 1082);
+            this.btnGerarChaves.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnGerarChaves.Name = "btnGerarChaves";
+            this.btnGerarChaves.Size = new System.Drawing.Size(444, 74);
+            this.btnGerarChaves.TabIndex = 34;
+            this.btnGerarChaves.Text = "Gerar de Chaves";
+            this.btnGerarChaves.UseVisualStyleBackColor = true;
+            this.btnGerarChaves.Click += new System.EventHandler(this.btnGerarChaves_Click);
+            // 
+            // cnt1
+            // 
+            this.cnt1.Location = new System.Drawing.Point(1607, 58);
+            this.cnt1.Name = "cnt1";
+            this.cnt1.Size = new System.Drawing.Size(1407, 601);
+            this.cnt1.TabIndex = 13;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3167, 1227);
+            this.ClientSize = new System.Drawing.Size(2553, 1227);
+            this.Controls.Add(this.btnGerarChaves);
             this.Controls.Add(this.txtSplit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.chkAgruparChaves);
@@ -466,6 +479,7 @@
         private System.Windows.Forms.CheckBox chkAgruparChaves;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSplit;
+        private System.Windows.Forms.Button btnGerarChaves;
     }
 }
 

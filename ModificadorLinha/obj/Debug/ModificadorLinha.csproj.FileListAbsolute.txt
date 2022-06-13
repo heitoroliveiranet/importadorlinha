@@ -10,3 +10,4 @@ C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.csproj.GenerateResour
 C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.csproj.CoreCompileInputs.cache
 C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.exe
 C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.pdb
+C:\lixo\modlin\ModificadorLinha\obj\Debug\ModificadorLinha.frmChaves.resources

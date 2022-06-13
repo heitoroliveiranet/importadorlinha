@@ -267,5 +267,11 @@ namespace ModificadorLinha
         {
 
         }
+
+        private void btnGerarChaves_Click(object sender, EventArgs e)
+        {
+            var frm = new frmChaves();
+            frm.ShowDialog();
+        }
     }
 }
